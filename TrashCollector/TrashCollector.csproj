@@ -195,12 +195,18 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805022048196_intitial.cs" />
+    <Compile Include="Migrations\201805022048196_intitial.Designer.cs">
+      <DependentUpon>201805022048196_intitial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Cities.cs" />
     <Compile Include="Models\CustomerAddress.cs" />
     <Compile Include="Models\CustomerUser.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Pickup.cs" />
     <Compile Include="Models\USStates.cs" />
     <Compile Include="Models\WorkerUser.cs" />
     <Compile Include="Models\ZipCodes.cs" />
@@ -280,6 +286,11 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201805022048196_intitial.resx">
+      <DependentUpon>201805022048196_intitial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -29,5 +29,15 @@ namespace TrashCollector.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<TrashCollector.Models.Cities> Cities { get; set; }
+
+        public System.Data.Entity.DbSet<TrashCollector.Models.CustomerAddress> CustomerAddresses { get; set; }
+
+        public System.Data.Entity.DbSet<TrashCollector.Models.CustomerUser> CustomerUsers { get; set; }
+
+        public System.Data.Entity.DbSet<TrashCollector.Models.WorkerUser> WorkerUsers { get; set; }
+
+        public System.Data.Entity.DbSet<TrashCollector.Models.USStates> USStates { get; set; }
     }
 }
