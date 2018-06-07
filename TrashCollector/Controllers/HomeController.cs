@@ -10,12 +10,20 @@ namespace TrashCollector.Controllers
     {
         public ActionResult Index()
         {
+            if (User.IsInRole("Customer"))
+            {
+                return RedirectToAction("CustomerHome", "Customers");
+            }
+            else if (User.IsInRole("Worker"))
+            {
+                return RedirectToAction("WorkerHome", "Workers");
+            }           
             return View();
         }
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Manage trash collection with this app.";
 
             return View();
         }

@@ -52,10 +52,10 @@ namespace TrashCollector
             }
 
             // creating Creating client role    
-            if (!roleManager.RoleExists("Client"))
+            if (!roleManager.RoleExists("Customer"))
             {
                 var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
-                role.Name = "Client";
+                role.Name = "Customer";
                 roleManager.Create(role);
 
             }

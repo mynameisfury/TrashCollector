@@ -30,14 +30,16 @@ namespace TrashCollector.Models
             return new ApplicationDbContext();
         }
 
-        public System.Data.Entity.DbSet<TrashCollector.Models.Cities> Cities { get; set; }
+        public System.Data.Entity.DbSet<TrashCollector.Models.City> Cities { get; set; }
 
-        public System.Data.Entity.DbSet<TrashCollector.Models.CustomerAddress> CustomerAddresses { get; set; }
+        public System.Data.Entity.DbSet<TrashCollector.Models.Address> CustomerAddresses { get; set; }
 
-        public System.Data.Entity.DbSet<TrashCollector.Models.CustomerUser> CustomerUsers { get; set; }
+        public System.Data.Entity.DbSet<TrashCollector.Models.Customer> CustomerUsers { get; set; }
 
-        public System.Data.Entity.DbSet<TrashCollector.Models.WorkerUser> WorkerUsers { get; set; }
+        public System.Data.Entity.DbSet<TrashCollector.Models.Worker> WorkerUsers { get; set; }
 
-        public System.Data.Entity.DbSet<TrashCollector.Models.USStates> USStates { get; set; }
+        public System.Data.Entity.DbSet<TrashCollector.Models.State> USStates { get; set; }
+
+        public System.Data.Entity.DbSet<TrashCollector.Models.Pickup> Pickups { get; set; }
     }
 }
