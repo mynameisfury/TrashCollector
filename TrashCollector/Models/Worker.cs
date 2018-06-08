@@ -13,7 +13,7 @@ namespace TrashCollector.Models
         public int ID { get; set; }
         public string Username { get; set; }
         public int AddressID { get; set; }
-        [ForeignKey("Address")]
+        [ForeignKey("AddressID")]
         public virtual Address Address { get; set; }
 
 

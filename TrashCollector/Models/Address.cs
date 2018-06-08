@@ -11,13 +11,17 @@ namespace TrashCollector.Models
     {
         [Key]
         public int ID { get; set; }
+
         public string StreetAddressLine1 { get; set; }
         public string StrettAddressLine2 { get; set; }
+
+        
         public int CityID { get; set; }
-        [ForeignKey("City")]
+        [ForeignKey("CityID")]
         public virtual City City { get; set; }
+
         public int StateID { get; set; }
-        [ForeignKey("State")]
+        [ForeignKey("StateID")]
         public virtual State State { get; set; }
 
         public int ZipCode { get; set; }

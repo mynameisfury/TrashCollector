@@ -32,14 +32,15 @@ namespace TrashCollector.Models
 
         public System.Data.Entity.DbSet<TrashCollector.Models.City> Cities { get; set; }
 
-        public System.Data.Entity.DbSet<TrashCollector.Models.Address> CustomerAddresses { get; set; }
+        public System.Data.Entity.DbSet<TrashCollector.Models.Address> Addresses { get; set; }
 
-        public System.Data.Entity.DbSet<TrashCollector.Models.Customer> CustomerUsers { get; set; }
+        public System.Data.Entity.DbSet<TrashCollector.Models.Customer> Customers { get; set; }
 
-        public System.Data.Entity.DbSet<TrashCollector.Models.Worker> WorkerUsers { get; set; }
+        public System.Data.Entity.DbSet<TrashCollector.Models.Worker> Workers { get; set; }
 
-        public System.Data.Entity.DbSet<TrashCollector.Models.State> USStates { get; set; }
+        public System.Data.Entity.DbSet<TrashCollector.Models.State> States { get; set; }
 
         public System.Data.Entity.DbSet<TrashCollector.Models.Pickup> Pickups { get; set; }
+        
     }
 }
