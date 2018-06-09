@@ -16,6 +16,6 @@ namespace TrashCollector.Models
         [ForeignKey("AddressID")]
         public virtual Address Address { get; set; }
 
-
+        public string UserID { get; set; }
     }
 }

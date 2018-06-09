@@ -10,116 +10,107 @@ using TrashCollector.Models;
 
 namespace TrashCollector.Controllers
 {
-    public class AddressesController : Controller
+    public class StatesController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: Addresses
+        // GET: States
         public ActionResult Index()
         {
-            var addresses = db.Addresses.Include(a => a.City).Include(a => a.State);
-            return View(addresses.ToList());
+            return View(db.States.ToList());
         }
 
-        // GET: Addresses/Details/5
+        // GET: States/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Address address = db.Addresses.Find(id);
-            if (address == null)
+            State state = db.States.Find(id);
+            if (state == null)
             {
                 return HttpNotFound();
             }
-            return View(address);
+            return View(state);
         }
 
-        // GET: Addresses/Create
+        // GET: States/Create
         public ActionResult Create()
         {
-            ViewBag.CityID = new SelectList(db.Cities, "ID", "CityName");
-            ViewBag.StateID = new SelectList(db.States, "ID", "StateName");
             return View();
         }
 
-        // POST: Addresses/Create
+        // POST: States/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,StreetAddressLine1,StrettAddressLine2,CityID,StateID,ZipCode")] Address address)
+        public ActionResult Create([Bind(Include = "ID,StateName")] State state)
         {
             if (ModelState.IsValid)
             {
-                db.Addresses.Add(address);
+                db.States.Add(state);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.CityID = new SelectList(db.Cities, "ID", "CityName", address.CityID);
-            ViewBag.StateID = new SelectList(db.States, "ID", "StateName", address.StateID);
-            return View(address);
+            return View(state);
         }
 
-        // GET: Addresses/Edit/5
+        // GET: States/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Address address = db.Addresses.Find(id);
-            if (address == null)
+            State state = db.States.Find(id);
+            if (state == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.CityID = new SelectList(db.Cities, "ID", "CityName", address.CityID);
-            ViewBag.StateID = new SelectList(db.States, "ID", "StateName", address.StateID);
-            return View(address);
+            return View(state);
         }
 
-        // POST: Addresses/Edit/5
+        // POST: States/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,StreetAddressLine1,StrettAddressLine2,CityID,StateID,ZipCode")] Address address)
+        public ActionResult Edit([Bind(Include = "ID,StateName")] State state)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(address).State = EntityState.Modified;
+                db.Entry(state).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.CityID = new SelectList(db.Cities, "ID", "CityName", address.CityID);
-            ViewBag.StateID = new SelectList(db.States, "ID", "StateName", address.StateID);
-            return View(address);
+            return View(state);
         }
 
-        // GET: Addresses/Delete/5
+        // GET: States/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Address address = db.Addresses.Find(id);
-            if (address == null)
+            State state = db.States.Find(id);
+            if (state == null)
             {
                 return HttpNotFound();
             }
-            return View(address);
+            return View(state);
         }
 
-        // POST: Addresses/Delete/5
+        // POST: States/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Address address = db.Addresses.Find(id);
-            db.Addresses.Remove(address);
+            State state = db.States.Find(id);
+            db.States.Remove(state);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
