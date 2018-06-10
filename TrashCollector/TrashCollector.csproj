@@ -194,6 +194,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PickupsController.cs" />
     <Compile Include="Controllers\StatesController.cs" />
+    <Compile Include="Controllers\WorkersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -285,6 +286,11 @@
     <Content Include="Views\States\Details.cshtml" />
     <Content Include="Views\States\Edit.cshtml" />
     <Content Include="Views\States\Index.cshtml" />
+    <Content Include="Views\Workers\Create.cshtml" />
+    <Content Include="Views\Workers\Delete.cshtml" />
+    <Content Include="Views\Workers\Details.cshtml" />
+    <Content Include="Views\Workers\Edit.cshtml" />
+    <Content Include="Views\Workers\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
