@@ -201,15 +201,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201805022048196_intitial.cs" />
-    <Compile Include="Migrations\201805022048196_intitial.Designer.cs">
-      <DependentUpon>201805022048196_intitial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806071805295_did stuff.cs" />
-    <Compile Include="Migrations\201806071805295_did stuff.Designer.cs">
-      <DependentUpon>201806071805295_did stuff.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\City.cs" />
     <Compile Include="Models\Address.cs" />
@@ -309,6 +300,7 @@
     <Content Include="Views\Customers\Details.cshtml" />
     <Content Include="Views\Customers\Edit.cshtml" />
     <Content Include="Views\Customers\Index.cshtml" />
+    <Content Include="Views\Workers\WorkerHome.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -325,14 +317,6 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201805022048196_intitial.resx">
-      <DependentUpon>201805022048196_intitial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806071805295_did stuff.resx">
-      <DependentUpon>201806071805295_did stuff.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -14,8 +15,16 @@ namespace TrashCollector.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: Workers
-        public ActionResult Index()
+        public ActionResult WorkerHome()
+        {
+            string userID = User.Identity.GetUserId();
+            var user = db.Users.Where(u => u.Id == userID).FirstOrDefault();
+            var worker = db.Workers.Where(c => c.UserID == user.Id).FirstOrDefault();
+            return View(db.Pickups.Where(p => p.Complete == false && p.Customer.Address.ZipCode == worker.Address.ZipCode).ToList());
+
+        }
+    // GET: Workers
+    public ActionResult Index()
         {
             var workers = db.Workers.Include(w => w.Address);
             return View(workers.ToList());
@@ -52,6 +61,7 @@ namespace TrashCollector.Controllers
         {
             if (ModelState.IsValid)
             {
+                worker.UserID = User.Identity.GetUserId();
                 db.Workers.Add(worker);
                 db.SaveChanges();
                 return RedirectToAction("Index");
