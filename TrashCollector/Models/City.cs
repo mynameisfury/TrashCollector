@@ -13,7 +13,7 @@ namespace TrashCollector.Models
         public int ID { get; set; }
         public string CityName { get; set; }
 
-        public int StateID { get; set; }
+        public int? StateID { get; set; }
         [ForeignKey("StateID")]
         public virtual State State { get; set; }
     }

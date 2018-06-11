@@ -15,7 +15,7 @@ namespace TrashCollector.Models
         public string LastName { get; set; }
         public int Balance { get; set; }
 
-        public int AddressID { get; set; }
+        public int? AddressID { get; set; }
         [ForeignKey("AddressID")]
         public virtual Address Address { get; set; }
 
